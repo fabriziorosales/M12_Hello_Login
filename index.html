@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+
+    <!-- DIV QUE CONTIENE LA CABECERA (EMOTICONO Y FRASE DE BIENVENIDA) -->
+    <div class="cabecera">
+
+        <!-- EMOTICO CARA SVG -->
+
+
+
+        <h1>NOS ALEGRA VOLVER A VERTE</h1>
+
+    </div>
+
+
+    <!-- DIV PADRE QUE CONTENDRA LA CAJA CON LOS FORMULARIOS (NOS PERMITE CENTRAR EL CONTENIDO) -->
+    <div>
+
+        <div>
+
+
+            <form action="./proc/conexion.php" method="post">
+                <label for="email">Email</label><br>
+                <input class="form" type="email" name="email" requied>
+                <br>
+                <label for="password">Contraseña</label><br>
+                <input class="form" type="password" name="password" required>
+                <br>
+
+                <input id="submit" type="submit" value="INICIAR SESIÓN">
+
+            </form>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

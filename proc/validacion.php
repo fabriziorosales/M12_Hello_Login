@@ -8,13 +8,18 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
             echo "<a href='../view/login.php'>volver</a>";
             die;
         }
-
+        $user = $_POST['user'];
+        $res = explode("@", $user);
+        $query = "SHOW GRANTS FOR $res[0]";
+        $result = mysqli_query($conn,$query);
+        if ($result == true){
+            $_SESSION['email_usuario'] = $user['user'];
+            echo "<script>location.href = '../vistas/bienvenidoAdmin.html';</script>";
+        }
         $query = "SELECT * FROM tbl_gestornotas WHERE user = '{$email_login}' AND password = '{$password_login}'";
-print_r($query);
         $valid_login = mysqli_query($conn, $query);
 
         $match = $valid_login -> num_rows;
-
         if ($match === 1) {
             session_start();
 
@@ -23,11 +28,9 @@ print_r($query);
                 $_SESSION['email_usuario'] = $user['user'];
                 $_SESSION['contra_usuario'] = $user['pass'];
             }
-            echo 'sexo sem parar';
-
-            echo "<script>window.location.href = '../paginachula.html';</script>";
+            echo "<script>location.href = '../vistas/bienvenido.html';</script>";
         } else {
-            echo "<script>window.location.href = '../index.html?validation=false';</script>";
+            echo "<script>location.href = '../index.htiml?validation=false';</script>";
         }
     }
 
@@ -37,5 +40,5 @@ print_r($query);
     login($email,$password);
 
 } else {
-   echo "<script>window.location.href = '../index.html?validation=false';</script>";
+   echo "<script>location.href = '../index.html?validation=false';</script>";
 }

@@ -12,14 +12,24 @@
 
 <body>
     <div class="cabecera">
-        <h1>BIENVENIDO</h1>
+        <div class="logo">
+
+            <img src="../img/logo.png" alt="logo escuela">
+        </div>
+        <div class="tittle">
+            <h1>BIENVENIDO</h1>
+        </div>
+
     </div>
     <div class="padre">
         <div class="box">
-
+            <div class="titulo_box">
+                <p>Por favor, rellena el formulario</p>
+                <hr>
+            </div>
 
             <form action="../proc/validate_register.php" method="post">
-                <br>
+
                 <label for="username">Usuario</label><br>
                 <input class="form" type="text" name="username" required>
 
@@ -37,7 +47,7 @@
                 <input id="submit" type="submit" value="Registrarse">
 
             </form>
-            <p id="registro">o <a href="../index.html">inicia sesion</a> con una cuenta existente</p>
+
         </div>
 
     </div>

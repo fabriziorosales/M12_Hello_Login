@@ -15,14 +15,13 @@
 
     <!-- DIV QUE CONTIENE LA CABECERA (EMOTICONO Y FRASE DE BIENVENIDA) -->
     <div class="cabecera">
+        <div class="logo">
 
-        <!-- EMOTICO CARA SVG -->
-
-        <path id="Icon_awesome-smile-beam" data-name="Icon awesome-smile-beam" d="M41.547.563A41.547,41.547,0,1,0,83.095,42.11,41.54,41.54,0,0,0,41.547.563ZM18.763,36.648c.553-7.053,5.394-11.962,9.382-11.962s8.829,4.909,9.382,11.962a1.335,1.335,0,0,1-2.5.754l-1.592-2.848c-1.29-2.3-3.217-3.619-5.277-3.619s-3.987,1.323-5.277,3.619L21.293,37.4a1.355,1.355,0,0,1-2.53-.754ZM60.78,57.221a25.026,25.026,0,0,1-38.465,0c-2.262-2.731,1.843-6.148,4.121-3.434a19.685,19.685,0,0,0,30.222,0c2.278-2.714,6.383.72,4.121,3.434ZM61.819,37.4l-1.592-2.848c-1.29-2.3-3.217-3.619-5.277-3.619s-3.987,1.323-5.277,3.619L48.081,37.4a1.338,1.338,0,0,1-2.5-.754c.553-7.053,5.394-11.962,9.382-11.962S63.8,29.6,64.348,36.648A1.355,1.355,0,0,1,61.819,37.4Z"
-            transform="translate(0.5 -0.063)" fill="#fff" stroke="#000" stroke-width="1" />
-        </svg>
-
-        <h1>NOS ALEGRA VOLVER A VERTE</h1>
+            <img src="./img/logo.png" alt="logo escuela">
+        </div>
+        <div class="tittle">
+            <h1>NOS ALEGRA VOLVER A VERTE</h1>
+        </div>
 
     </div>
 
@@ -31,7 +30,10 @@
     <div class="padre">
 
         <div class="box">
-
+            <span class="titulo_box">
+                <p>Por favor, rellena el formulario</p>
+                <hr>
+            </span>
             <form action="../proc/validate_login.php" method="post">
                 <label for="email">Email</label><br>
                 <input class="form" type="email" name="email" requied>

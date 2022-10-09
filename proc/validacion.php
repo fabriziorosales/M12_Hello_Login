@@ -12,9 +12,23 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
         $res = explode("@", $user);
         $query = "SHOW GRANTS FOR $res[0]";
         $result = mysqli_query($conn,$query);
+        print_r($result);
         if ($result == true){
-            $_SESSION['email_usuario'] = $user['user'];
-            echo "<script>location.href = '../vistas/bienvenidoAdmin.html';</script>";
+            $query = "SELECT * FROM tbl_gestornotas WHERE user = '{$email_login}' AND password = '{$password_login}'";
+            $valid_login = mysqli_query($conn, $query);
+            echo "está entrando?";
+            $match = $valid_login -> num_rows;
+            if ($match === 1) {
+                session_start();
+    echo "aqui tbm chega?";
+                foreach ($valid_login as $key => $user) {
+                    $_SESSION['id_usuario'] = $user['id'];
+                    $_SESSION['email_usuario'] = $user['user'];
+                    $_SESSION['contra_usuario'] = $user['pass'];
+                }
+              //  echo "<script>location.href = '../vistas/bienvenido.html';</script>";
+            } else {
+            }
         }
         $query = "SELECT * FROM tbl_gestornotas WHERE user = '{$email_login}' AND password = '{$password_login}'";
         $valid_login = mysqli_query($conn, $query);
@@ -28,9 +42,9 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
                 $_SESSION['email_usuario'] = $user['user'];
                 $_SESSION['contra_usuario'] = $user['pass'];
             }
-            echo "<script>location.href = '../vistas/bienvenido.html';</script>";
+       //     echo "<script>location.href = '../vistas/bienvenido.html';</script>";
         } else {
-            echo "<script>location.href = '../index.htiml?validation=false';</script>";
+       //     echo "<script>location.href = '../index.html?validation=false';</script>";
         }
     }
 
@@ -40,5 +54,5 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
     login($email,$password);
 
 } else {
-   echo "<script>location.href = '../index.html?validation=false';</script>";
+ //  echo "<script>location.href = '../index.html?validation=false';</script>";
 }

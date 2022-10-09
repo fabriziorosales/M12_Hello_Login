@@ -1,2 +1,2 @@
 <?php
-$conn = mysqli_connect("172.24.16.111","admin","DaW2@","bd_notas");
+$conn = mysqli_connect("localhost","root","","bd_notas");

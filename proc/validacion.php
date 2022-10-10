@@ -2,7 +2,7 @@
 if (!empty($_POST['user']) && !empty($_POST['password'])) {
     function login($email_login, $password_login) {
         require "./conexion.php";
-        if (!$conn) {
+        if (!$conexion) {
             echo "ERROR DE CONEXION CON LA BASE DE DATOS";
             echo "<a href='../view/login.php'>volver</a>";
             die;
@@ -10,10 +10,10 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
         $user = $_POST['user'];
         $res = explode("@", $user);
         $querya = "SHOW GRANTS FOR $res[0]";
-        $result = mysqli_query($conn,$querya);
+        $result = mysqli_query($conexion,$querya);
         if ($result == true){
             $query2 = "SELECT * FROM tbl_gestornotas WHERE user = '{$email_login}' AND password = '{$password_login}'";
-            $valid_login1 = mysqli_query($conn, $query2);
+            $valid_login1 = mysqli_query($conexion, $query2);
             print_r($valid_login1);
             echo "está entrando?";
             $match1 = $valid_login1 -> num_rows;
@@ -28,7 +28,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
             }
         }
         $query = "SELECT * FROM tbl_gestornotas WHERE user = '{$email_login}' AND password = '{$password_login}'";
-        $valid_login = mysqli_query($conn, $query);
+        $valid_login = mysqli_query($conexion, $query);
 
         $match = $valid_login -> num_rows;
         if ($match === 1) {

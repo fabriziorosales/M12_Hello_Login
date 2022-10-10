@@ -24,7 +24,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
                     $_SESSION['email_usuario'] = $user['user'];
                     $_SESSION['contra_usuario'] = $user['password'];
                 }
-              echo "<script>location.href = '../vistas/bienvenidoAdmin.html';</script>";
+              echo "<script>location.href = '../vistas/bienvenido.html';</script>";
             }
         }
         $query = "SELECT * FROM tbl_gestornotas WHERE user = '{$email_login}' AND password = '{$password_login}'";
@@ -51,5 +51,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
     login($email,$password);
 
 } else {
-  echo "<script>location.href = '../index.html?validation=false';</script>";
+
+   echo "<script>location.href = '../index.html?validation=false';</script>";
+
 }

@@ -5,52 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon_package_v0.16/favicon-16x16.png">
     <link rel="stylesheet" href="../css/login.css">
-    <title>Login</title>
+    <title>Login-Notics</title>
     <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
 
-
-    <!-- DIV QUE CONTIENE LA CABECERA (EMOTICONO Y FRASE DE BIENVENIDA) -->
-    <div class="cabecera">
+    <div class="container">
         <div class="logo">
 
-            <img src="./img/logo.png" alt="logo escuela">
+            <img class="img1" src="./img/logoNegro.png" alt="logo">
+            <img class="img2" src="./img/logoRespNegro.png" alt="logo2">
         </div>
-        <div class="tittle">
-            <h1>NOS ALEGRA VOLVER A VERTE</h1>
+        <div class="top"></div>
+        <div class="bottom">
+
         </div>
-
-    </div>
-
-
-    <!-- DIV PADRE QUE CONTENDRA LA CAJA CON LOS FORMULARIOS (NOS PERMITE CENTRAR EL CONTENIDO) -->
-    <div class="padre">
-
         <div class="box">
-            <span class="titulo_box">
-                <p>Por favor, rellena el formulario</p>
-                <hr>
-            </span>
-            <form action="../proc/validate_login.php" method="post">
-                <label for="email">Email</label><br>
-                <input class="form" type="email" name="email" requied>
-                <br>
-                <label for="password">Contraseña</label><br>
-                <input class="form" type="password" name="password" required>
-                <br>
 
-                <input id="submit" type="submit" value="INICIAR SESIÓN">
+            <div class="center">
+                <h2>Inicio de sesion</h2>
+                <form action="../proc/validate_login.php" method="post">
+                    <label for="email">Email</label><br>
+                    <input class="form" type="email" name="email" requied>
+                    <br>
+                    <label for="password">Contraseña</label><br>
+                    <input class="form" type="password" name="password" required>
+                    <br>
+                    <button class="btn" id="submit" type="submit">Log In</button>
 
-            </form>
+
+                </form>
+
+            </div>
 
         </div>
 
 
 
+
     </div>
+
 
 </body>
 

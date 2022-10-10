@@ -39,3 +39,10 @@
 </body>
 
 </html>
+
+<?php 
+if($_SESSION['adm'] == 1){
+echo "llega puta";
+}else{
+    echo "Eres una gran putita";
+}

@@ -1,155 +1,174 @@
 body {
-  margin: 0;
+    margin: 0;
 }
+
 nav {
-  display: grid;
-  position: fixed;
-  height: 10vh;
-  width: 100%;
-  grid-template-columns: repeat(5, 1fr);
-  background-color: #92aec1;
+    display: grid;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #92aec1;
 }
+
 .logo {
-  grid-area: 1 / 1 / 1 / 2;
-  height: 10VH;
-  display: flex;
-  justify-content: flex-start;
+    grid-area: 1 / 1 / 1 / 2;
+    height: 10VH;
+    display: flex;
+    justify-content: flex-start;
 }
+
 nav div .img1 {
-  width: 60%;
-  height: 100%;
-  object-fit: cover;
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
 }
+
 .logOut {
-  grid-area: 1 / 5 / 2 / 6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    grid-area: 1 / 5 / 2 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .logOut .icon-logOut {
-  width: 10%;
-  height: 5vh;
+    width: 10%;
+    height: 5vh;
 }
+
 .content {
-  padding-top: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 90vh;
-  color: black;
+    padding-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    color: black;
 }
+
 .padre {
-  height: 90vh;
-  width: 100%;
-  padding-top: 5%;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 90vh;
+    width: 100%;
+    padding-top: 5%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .padre svg {
-  position: absolute;
-  top: 90%;
-  left: 3%;
-  padding-left: 0.5%;
-  padding-right: 0.5%;
-  border-radius: 9px;
-  background: #ffad42;
-  border: 1px solid #707070;
-  color: white;
+    position: absolute;
+    top: 90%;
+    left: 3%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    border-radius: 9px;
+    background: #ffad42;
+    border: 1px solid #707070;
+    color: white;
 }
+
 .padre .box {
-  width: 330px;
-  height: 450px;
-  border-radius: 40px;
-  background: #efefef;
-  border: 1px solid #707070;
-  display: flex;
-  justify-items: center;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
+    width: 330px;
+    height: 450px;
+    border-radius: 40px;
+    background: #efefef;
+    border: 1px solid #707070;
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
+
 .padre .box .titulo_box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .padre .box .titulo_box hr {
-  width: 80%;
-  border-top: 1px solid;
-  color: #45304e;
+    width: 80%;
+    border-top: 1px solid;
+    color: #45304e;
 }
+
 .padre .box .titulo_box p {
-  font-family: Arial;
-  font-size: 17px;
-  color: #3f1850;
+    font-family: Arial;
+    font-size: 17px;
+    color: #3f1850;
 }
+
 .padre .box #NoError {
-  font-family: Arial;
-  font-size: 18px;
-  text-align: center;
-  color: #3f1850;
-  position: absolute;
-  top: 2%;
-  border-bottom: 1px solid #3f1850;
-  padding-bottom: 3px;
+    font-family: Arial;
+    font-size: 18px;
+    text-align: center;
+    color: #3f1850;
+    position: absolute;
+    top: 2%;
+    border-bottom: 1px solid #3f1850;
+    padding-bottom: 3px;
 }
+
 .padre .box #error {
-  font-family: Arial;
-  font-size: 18px;
-  text-align: center;
-  color: #d90909;
-  border-bottom: 1px solid #3f1850;
-  padding-bottom: 3px;
-  position: absolute;
-  top: 2%;
+    font-family: Arial;
+    font-size: 18px;
+    text-align: center;
+    color: #d90909;
+    border-bottom: 1px solid #3f1850;
+    padding-bottom: 3px;
+    position: absolute;
+    top: 2%;
 }
+
 .padre .box h2 {
-  font-family: Arial;
-  font-size: 18px;
-  text-align: center;
-  color: #3f1850;
-  border-bottom: 1px solid #3f1850;
-  padding-bottom: 3px;
-  position: absolute;
-  top: 2%;
+    font-family: Arial;
+    font-size: 18px;
+    text-align: center;
+    color: #3f1850;
+    border-bottom: 1px solid #3f1850;
+    padding-bottom: 3px;
+    position: absolute;
+    top: 2%;
 }
+
 .padre .box .form {
-  width: 250px;
-  height: 25px;
-  position: relative;
-  top: 10%;
-  left: -1%;
-  margin-left: 10%;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  border: #3f1850;
+    width: 250px;
+    height: 25px;
+    position: relative;
+    top: 10%;
+    left: -1%;
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: #3f1850;
 }
+
 .padre .box #submit {
-  position: relative;
-  top: 0%;
-  left: 10%;
-  margin-top: 15%;
-  color: white;
-  width: 250px;
-  height: 40px;
-  border-radius: 12px;
-  background: #FE5F55;
-  border: 1px solid #707070;
+    position: relative;
+    top: 0%;
+    left: 10%;
+    margin-top: 15%;
+    color: white;
+    width: 250px;
+    height: 40px;
+    border-radius: 12px;
+    background: #FE5F55;
+    border: 1px solid #707070;
 }
+
 .padre .box label {
-  position: relative;
-  top: 12%;
-  left: 9%;
-  font-size: 15px;
-  color: #3f1850;
+    position: relative;
+    top: 12%;
+    left: 9%;
+    font-size: 15px;
+    color: #3f1850;
 }
+
 .padre .box p {
-  position: relative;
-  top: 0%;
-  font-size: 15px;
+    position: relative;
+    top: 0%;
+    font-size: 15px;
 }

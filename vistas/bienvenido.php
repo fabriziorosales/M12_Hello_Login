@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +40,13 @@
             <img src="../img/logoNegro.png" alt="">
         </div>
     </div>
+
+    <?php
+    session_start();
+    if ($_SESSION['adm']==1) {
+        echo "hola";
+    }
+    ?>
 </body>
 
 </html>

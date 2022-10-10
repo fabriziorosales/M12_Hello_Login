@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,9 +42,6 @@
             </div>
 
             <form action="../proc/crearcontroller.php" method="post">
-
-
-
 
                 <label for="email">Email</label><br>
                 <input class="form email" type="email" name="username" required>

@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (empty($_SESSION)) {
+    echo "<script>window.location.href='../index.php'</script>";
+}else if ($_SESSION['adm']==1) {
+    # code...
 
 ?>
 
@@ -43,15 +48,25 @@
 
             <form action="../proc/crearcontroller.php" method="post">
 
-                <label for="email">Email</label><br>
-                <input class="form email" type="email" name="username" required>
+                <div class="inputs">
+                    <label for="email">Email</label>
+
+                    <input class="form email" type="email" name="username" required>
+                </div>
 
                 <br>
-                <label for="email">Contraseña</label><br>
-                <input class="form password" type="password" name="password" required>
+                <div class="inputs">
+                    <label for="email">Contraseña</label>
 
-                <br><label for="password">Confirma la contraseña</label><br>
-                <input class="form password_con" type="password" name="password_conf" required>
+                    <input class="form password" type="password" name="password" required>
+                </div >
+
+                <br>
+                <div class="inputs">
+                    <label for="password">Confirma la contraseña</label>
+
+                    <input class="form password_con" type="password" name="password_conf" required>
+                </div>
 
                 <input id="submit" type="submit" value="Registrarse">
 
@@ -60,7 +75,13 @@
         </div>
 
     </div>
-    <!-- <script src="../js/validation.js"></script> -->
+    <script src="../js/validation.js"></script>ç
 </body>
 
 </html>
+<?php 
+        }else {
+            echo "<script>window.location.href='./bienvenido.php'</script>";
+        } 
+        ?>
+        

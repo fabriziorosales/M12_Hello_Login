@@ -27,6 +27,8 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
                     $_SESSION['contra_usuario'] = $user['password'];
                 }
               echo "<script>location.href = '../vistas/bienvenido.php';</script>";
+            }else {
+                echo "<script>location.href = '../index.php?validation=false';</script>";
             }
         }else{
             $_SESSION['adm'] = '0';
@@ -44,7 +46,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
                 }
                 echo "<script>location.href = '../vistas/bienvenido.php';</script>";
             } else {
-               echo "<script>location.href = '../index.html?validation=false';</script>";
+               echo "<script>location.href = '../index.php?validation=false';</script>";
             }
         }
     }
@@ -56,6 +58,6 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
 
 } else {
 
-   echo "<script>location.href = '../index.html?validation=false';</script>";
+   echo "<script>location.href = '../index.php?validation=false';</script>";
 
 }

@@ -44,9 +44,14 @@
 
 
                 </form>
+<?php
 
+            if (isset($_GET['validation']) && $_GET['validation']=="false") {
+                echo "<p class='error'>Error en el inicio de sesión</p>";
+            }
+            ?>
             </div>
-
+            
         </div>
 
 

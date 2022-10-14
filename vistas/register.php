@@ -46,7 +46,7 @@ if (empty($_SESSION)) {
                 <hr>
             </div>
 
-            <form action="../proc/crearcontroller.php" method="post">
+            <form action="../proc/crearcontroller.php" method="post" novalidate>
 
                 <div class="inputs">
                     <label for="email">Email</label>

@@ -1,4 +1,5 @@
 <?php
+  require "./conexion.php";
 if (!empty($_POST['user']) && !empty($_POST['password'])) {
     function login($email_login, $password_login) {
         require "./conexion.php";
@@ -50,8 +51,8 @@ if (!empty($_POST['user']) && !empty($_POST['password'])) {
             }
         }
     }
-
-    $email = $_POST['user'];
+    
+    $email =  $conexion -> real_escape_string($_POST['user']);
     $password = sha1($_POST['password']);
 
     login($email,$password);

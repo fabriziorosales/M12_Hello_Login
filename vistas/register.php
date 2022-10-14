@@ -73,6 +73,8 @@ if (empty($_SESSION)) {
                 </div>
 
                 <input id="submit" type="submit" value="Registrarse">
+                <div class="volver"> <a href="./bienvenido.php"><img src="../img/volver.svg" alt="volver"></a></div>
+               
 
             </form>
 

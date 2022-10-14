@@ -91,6 +91,13 @@ nav div .img1 {
   color: black;
 }
 @media (max-width: 1000px) {
+  .logOut .icon-logOut {
+    width: 80px;
+    padding-right: 35%;
+  }
+  nav div .img1 {
+    width: 230px;
+  }
   .content div h1 {
     font-size: 40px;
   }
@@ -98,7 +105,7 @@ nav div .img1 {
     width: 40%;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 540px) {
   .logOut .icon-logOut {
     width: 80px;
     padding-right: 35%;

@@ -172,7 +172,7 @@ window.addEventListener('load', () => {
                 } else {
                     // Entrada incorrecta
                     if (!campoPasswordCon.getElementsByClassName('error')[0]) {
-                        alert("Password: " + passJav.value + " | Confirm Password: " + passwordConJav.value);
+                        // alert("Password: " + passJav.value + " | Confirm Password: " + passwordConJav.value);
                         // parentErr.classList.add('error');
                         parentErr.appendChild(document.createTextNode('Las contraseñas no coinciden'));
                         insertDespues(passwordConJav, parentErr);
@@ -191,6 +191,7 @@ window.addEventListener('load', () => {
     // Hover en el submit para verificar si se cumplen las condiciones.
 
     if (document.getElementsByClassName('password_con')[0]) {
+
         bloquearBoton.addEventListener('mouseover', () => {
             if (em == 1 && pass == 1 && con == 1) {
                 bloquearBoton.disabled = false;

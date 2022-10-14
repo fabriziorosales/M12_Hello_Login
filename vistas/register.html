@@ -36,21 +36,29 @@
                 <hr>
             </div>
 
-            <form action="../proc/validate_register.php" method="post">
+            <form action="../proc/validate_register.php" method="post" novalidate>
 
+                <div>
                 <label for="username">Usuario</label><br>
                 <input class="form username" type="text" name="username" required>
-
+                </div>
+            
+                <div>
                 <br>
                 <label for="email">Email</label><br>
                 <input class="form email" type="email" name="email" required>
+                </div>
 
+                <div>
                 <br>
                 <label for="email">Contraseña</label><br>
                 <input class="form password" type="password" name="password" required>
+                </div>
 
+                <div>
                 <br><label for="password">Confirma la contraseña</label><br>
                 <input class="form password_con" type="password" name="password_conf" required>
+                </div>
 
                 <input id="submit" type="submit" value="Registrarse">
 

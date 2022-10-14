@@ -1,8 +1,7 @@
-
+var usr = 0, em = 0, pass = 0, con = 0;
 // Comprobamos que la pagina ha cargado totalmente
 window.addEventListener('load', () => {
 
-    usr = 0, em = 0, pass = 0, con = 0;
     var bloquearBoton = document.getElementById('submit');
     
     function insertDespues(e,i){ 
@@ -13,54 +12,55 @@ window.addEventListener('load', () => {
         }
     }
 
-    if (document.getElementsByClassName('username')[0]) {
-        var usernameJav = document.getElementsByClassName('username')[0];
-        var campoUsername = usernameJav.parentNode;
-        usernameJav.addEventListener('blur', () => {
-            let expUser = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
-            
-            if (expUser.test(usernameJav.value)) {
-                // Entrada correcta
+    // if (document.getElementsByClassName('username')[0]) {
+    var usernameJav = document.getElementsByClassName('username')[0];
+    var campoUsername = usernameJav.parentNode;
+
+    usernameJav.addEventListener('keyup', () => {
+        let expUser = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+        
+        if (expUser.test(usernameJav.value)) {
+            // Entrada correcta
+            if (campoEmail.getElementsByClassName('error')[0]) {
                 campoUsername.getElementsByClassName('error')[0].remove();
-                bloquearBoton.disabled = false;
-                usr = 1;
-            } else {
-                // Entrada incorrecta
-
-                let parentErr = document.createElement('span');
-                parentErr.classList.add('error');
-                if (usernameJav.value == '') {
-                    if (!campoUsername.getElementsByClassName('error')[0]) {
-                        // parentErr.classList.add('error');
-                        parentErr.appendChild(document.createTextNode('El campo username esta vacio'));
-                        insertDespues(usernameJav, parentErr);
-                    } else {
-                        campoUsername.getElementsByClassName('error')[0].remove();
-                        // parentErr.classList.add('error');
-                        parentErr.appendChild(document.createTextNode('El campo username esta vacio'));
-                        insertDespues(usernameJav, parentErr);
-                    }
-                } else {
-                    if (!campoUsername.getElementsByClassName('error')[0]) {
-                        // parentErr.classList.add('error');
-                        parentErr.appendChild(document.createTextNode('El username no es correcto'));
-                        insertDespues(usernameJav, parentErr);
-                    } else {
-                        campoUsername.getElementsByClassName('error')[0].remove();
-                        // parentErr.classList.add('error');
-                        parentErr.appendChild(document.createTextNode('El username no es correcto'));
-                        insertDespues(usernameJav, parentErr);
-                    }
-                }
-
             }
-        });
-    }
+            bloquearBoton.disabled = false;
+            usr = 1;
+        } else {
+            // Entrada incorrecta
+            let parentErr = document.createElement('span');
+            parentErr.classList.add('error');
+            if (usernameJav.value == '') {
+                if (!campoUsername.getElementsByClassName('error')[0]) {
+                    // parentErr.classList.add('error');
+                    parentErr.appendChild(document.createTextNode('El campo username esta vacio'));
+                    insertDespues(usernameJav, parentErr);
+                } else {
+                    campoUsername.getElementsByClassName('error')[0].remove();
+                    // parentErr.classList.add('error');
+                    parentErr.appendChild(document.createTextNode('El campo username esta vacio'));
+                    insertDespues(usernameJav, parentErr);
+                }
+            } else {
+                if (!campoUsername.getElementsByClassName('error')[0]) {
+                    // parentErr.classList.add('error');
+                    parentErr.appendChild(document.createTextNode('El username no es correcto'));
+                    insertDespues(usernameJav, parentErr);
+                } else {
+                    campoUsername.getElementsByClassName('error')[0].remove();
+                    // parentErr.classList.add('error');
+                    parentErr.appendChild(document.createTextNode('El username no es correcto'));
+                    insertDespues(usernameJav, parentErr);
+                }
+            }
+        }
+    });
+    // }
 
     var emailJav = document.getElementsByClassName('email')[0];
     var campoEmail = emailJav.parentNode;
     
-    emailJav.addEventListener('blur', () => {
+    emailJav.addEventListener('keyup', () => {
         let expEmail = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
         if (expEmail.test(emailJav.value)) {
             // Entrada correcta
@@ -103,7 +103,7 @@ window.addEventListener('load', () => {
     // CONTRASEÑA
     var passJav = document.getElementsByClassName('password')[0];
     var campoPass = passJav.parentNode;
-    passJav.addEventListener('blur', () => {
+    passJav.addEventListener('keyup', () => {
         let expPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,30}/;
         let parentErr = document.createElement('span');
         parentErr.classList.add('error');
@@ -142,11 +142,11 @@ window.addEventListener('load', () => {
 
 
     // CONFIRMAR CONTRASEÑA
-    if (document.getElementsByClassName('password_con')[0]) {
+    // if (document.getElementsByClassName('password_con')[0]) {
         var passwordConJav = document.getElementsByClassName('password_con')[0];
         var campoPasswordCon = passwordConJav.parentNode;
 
-        passwordConJav.addEventListener('blur', () => {
+        passwordConJav.addEventListener('keyup', () => {
 
             let parentErr = document.createElement('span');
             parentErr.classList.add('error');
@@ -170,7 +170,6 @@ window.addEventListener('load', () => {
                 } else {
                     // Entrada incorrecta
                     if (!campoPasswordCon.getElementsByClassName('error')[0]) {
-                        alert("Password: "+passJav.value+" | Confirm Password: "+passwordConJav.value);
                         // parentErr.classList.add('error');
                         parentErr.appendChild(document.createTextNode('Las contraseñas no coinciden'));
                         insertDespues(passwordConJav, parentErr);
@@ -184,26 +183,28 @@ window.addEventListener('load', () => {
             }
 
         });
-    }
+    // }
 
     // Hover en el submit para verificar si se cumplen las condiciones.
     
-    if (document.getElementsByClassName('password_con')[0]) {
+    // if (document.getElementsByClassName('password_con')[0]) {
         bloquearBoton.addEventListener('mouseover', () => {
+            bloquearBoton.disabled = false;
+            console.log(usr+' '+em+' '+pass+' '+con)
             if (usr == 1 && em == 1 && pass == 1 && con == 1) {
                 bloquearBoton.disabled = false;
             } else {
                 bloquearBoton.disabled = true;
             }
-         });
-    } else {
-        bloquearBoton.addEventListener('mouseover', () => {
-            if (em == 1 && pass == 1) {
-                bloquearBoton.disabled = false;
-            } else {
-                bloquearBoton.disabled = true;
-            }
-         });
-    }
+        });
+    // } else {
+    //     bloquearBoton.addEventListener('mouseover', () => {
+    //         if (em == 1 && pass == 1) {
+    //             bloquearBoton.disabled = false;
+    //         } else {
+    //             bloquearBoton.disabled = true;
+    //         }
+    //      });
+    // }
 
 })

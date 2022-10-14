@@ -28,20 +28,27 @@ if ((!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['
     $match = $valid_login -> num_rows;
 
     if ($match === 1) {
+      
+        echo "<script>alert('Este usuario ya existe')</script>";
+        
 
-        echo "Este user existe";
-
-        // echo "<script>window.location.href = '../vistas/register.php?validation=false';</script>";
+        echo "<script>window.location.href = '../vistas/register.php';</script>";
 
     } elseif ($match === 0) {
 
         try {
         $insert_query = "INSERT INTO tbl_gestornotas (id, user, password) VALUES (NULL, '{$username}', '{$password}')";
         $insert_sql = mysqli_query($conexion, $insert_query);
-        echo "usuario creado correctamente";
+        echo "<script>alert('Usuario registrado correctamente')</script>";
+        
+
+        echo "<script>window.location.href = '../vistas/register.php';</script>";
         } catch ( exception $e) {
             echo $e -> getmessage();
-            echo "error al crear usuario";
+            echo "<script>alert('Erro al registrar al usuario')</script>";
+        
+
+        echo "<script>window.location.href = '../vistas/register.php';</script>";
         }
 
      
@@ -55,7 +62,10 @@ if ((!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['
 
 }
  else {
-    echo "campos no rellenados"; 
+    echo "<script>alert('Campos no rellenados o incorrectos')</script>";
+        
+
+    echo "<script>window.location.href = '../vistas/register.php';</script>";
     
     // echo "<script>window.location.href = '../vista/register.php?validation=false';</script>";
  }

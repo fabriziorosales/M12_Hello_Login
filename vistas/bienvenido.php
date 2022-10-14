@@ -50,7 +50,7 @@ session_start();
                 <div class='btn_NuevoRegis'>
                <?php
                     if ($_SESSION['adm']==1) {
-                        echo "<button >Crear Nuevo Usuario</button>";
+                        echo "<span class='btn'><a class='' href='./register.php'>Crear Nuevo Usuario</a></span>";
                     }
                  ?>
                     </div>

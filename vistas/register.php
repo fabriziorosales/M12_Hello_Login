@@ -24,6 +24,10 @@ if (empty($_SESSION)) {
 
     <title>Welcome-Notics</title>
     <link rel="stylesheet" href="../css/register.css">
+
+      <!-- JS -->
+      <script src="../js/sweetAlert2.js"></script>
+      <script src="../js/logOut.js"></script>
 </head>
 
 <body>
@@ -33,7 +37,7 @@ if (empty($_SESSION)) {
         </div>
 
         <div class="logOut">
-            <img class="icon-logOut" src="../img/bx-log-out-circle.svg" alt="">
+            <img class="icon-logOut" onclick="alertaLogOut()"    src="../img/bx-log-out-circle.svg" alt="">
         </div>
     </nav>
 
@@ -75,7 +79,7 @@ if (empty($_SESSION)) {
         </div>
 
     </div>
-    <script src="../js/validation.js"></script>ç
+    <script src="../js/validation.js"></script>
 </body>
 
 </html>
